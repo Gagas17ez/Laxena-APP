@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_webview_example/webview_page.dart';
+import 'package:Laxena/web_laxena_page.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  await Future.delayed(const Duration(seconds: 1))
+      .then((value) => FlutterNativeSplash.remove());
   runApp(const MyApp());
 }
 
@@ -11,11 +16,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Laxena',
       theme: ThemeData(
-        primarySwatch: Colors.brown,
+        primarySwatch: Colors.grey,
       ),
-      home: const WebviewPage(),
+      home: const WebLaxenaPage(),
     );
   }
 }

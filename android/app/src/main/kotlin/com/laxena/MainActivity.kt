@@ -1,4 +1,4 @@
-package com.example.flutter_webview_example
+package com.laxena
 
 import io.flutter.embedding.android.FlutterActivity
 
